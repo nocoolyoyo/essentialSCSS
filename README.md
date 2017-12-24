@@ -2,27 +2,24 @@
 
 > essential-SCSS
 
-## Build Setup
+## 安装| Build Setup
 
 ``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-
-# run unit tests
-npm run unit
-
-# run e2e tests
-npm run e2e
-
-# run all tests
-npm test
+npm install essential-SCSS
 ```
+## 项目引入 | Import
+
+在项目中引入flexible(如果使用flexible作为移动端适配方案),
+引入style.scss的默认样式（包含normalize.css的重置样式）
+```ecmascript 6
+import 'essential-SCSS/flexible'
+import 'essential-SCSS/style.scss'
+```
+引入项目提供的scss方法和类
+```scss
+@import "essential-SCSS/import.scss";
+```
+
+
+
+
