@@ -1,0 +1,14 @@
+/*-----dpr转换相关-----*/
+
+//@function  dp: 传入 px输出 px基值为dpr下的rem值（带单位）
+//@param $px: 输入px值
+//@param $noUnit: 输出的rem是否带rem单位（有时需要对输出的值做四则运算时候需要）
+//@return 返回计算后的rem值
+@function dp($px, $noUnit: false) {
+  $value: $px/( $dpr-font-base * $dpr-dp-relative );
+  @if $noUnit{
+    @return #{$value};
+  }@else{
+    @return #{$value}rem;
+  }
+}

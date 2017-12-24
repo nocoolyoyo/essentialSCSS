@@ -1,0 +1,129 @@
+
+/*-----dpr片段输出-----*/
+
+//@mixin  dpr: 输入dpr为1的值然后输出 dprCSS片段
+//@$params: 输入参数格式
+//@example:
+//                    a {
+//                      @include dpr(font-size  12px)
+//                    }
+
+@mixin dpr($params...) {
+  @each $dpr in $dprs {
+    @each $param in $params {
+      [data-dpr="#{$dpr}"] & {
+        $name: nth($param,1);
+        $value: nth($param,2)  * $dpr;
+        #{$name}: $value;
+      }
+    }
+  }
+}
+
+//
+@mixin dpr-output($params...) {
+  @each $dpr in $dprs {
+    @if($dpr == 1){
+      @each $param in $params {
+        $name: nth($param,1);
+        @if($name == important){
+
+          $name: nth($param,2);
+          @if($name == padding or $name == margin){
+            $value: nth($param,3);
+            $newValue: ();
+            //@debug $value;
+            @each $val in $value {
+              //根据$val长度判断是否是dpr数据集合
+              //@debug $val;
+              @if(length($val)>1){
+                //@debug $val;
+                //@debug nth($val,$dpr);
+                $newValue: append($newValue,nth($val,$dpr), space);
+                //@debug $newValue;
+              }@else{
+                $newValue: append($newValue,$val,space);
+              }
+              //@debug $newValue;
+            }
+            #{$name}: $newValue !important;
+          }@else {
+            $value: nth(nth($param,3),$dpr);
+            #{$name}: $value !important;
+          }
+
+        }@else{
+          @if($name == padding or $name == margin){
+            $value: nth($param,2);
+            $newValue: ();
+            //@debug $value;
+            @each $val in $value {
+              //根据$val长度判断是否是dpr数据集合
+              //@debug $val;
+              @if(length($val)>1){
+                //@debug $val;
+                //@debug nth($val,$dpr);
+                $newValue: append($newValue,nth($val,$dpr), space);
+                //@debug $newValue;
+              }@else{
+                $newValue: append($newValue,$val,space);
+              }
+              //@debug $newValue;
+            }
+            #{$name}: $newValue;
+          }@else {
+            $value: nth(nth($param,2),$dpr);
+            #{$name}: $value;
+          }
+        }
+      }
+    }@else{
+      [data-dpr="#{$dpr}"] &{
+        @each $param in $params {
+          $name: nth($param,1);
+          @if($name == important){
+
+            $name: nth($param,2);
+            @if($name == padding or $name == margin){
+              $value: nth($param,3);
+              $newValue: ();
+              @each $val in $value {
+                //根据$val长度判断是否是dpr数据集合
+                @if(length($val)>1){
+                  $newValue: append($newValue,nth($val,$dpr), space);
+                }@else{
+                  $newValue: append($newValue,$val, space);
+                }
+                //@debug $newValue;
+              }
+              #{$name}: $newValue !important;
+            }@else {
+              $value: nth(nth($param,3),$dpr);
+              #{$name}: $value !important;
+            }
+
+          }@else{
+            @if($name == padding or $name == margin){
+              $value: nth($param,2);
+              $newValue: ();
+              @each $val in $value {
+                //根据$val长度判断是否是dpr数据集合
+                @if(length($val)>1){
+                  $newValue: append($newValue,nth($val,$dpr), space);
+                }@else{
+                  $newValue: append($newValue,$val, space);
+                }
+                //@debug $newValue;
+              }
+              #{$name}: $newValue;
+            }@else {
+              $value: nth(nth($param,2),$dpr);
+              #{$name}: $value;
+            }
+          }
+
+        }
+      }
+    }
+  }
+}

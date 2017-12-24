@@ -1,0 +1,10 @@
+/*---滚动容器---*/
+@mixin scroller(){
+  -webkit-overflow-scrolling: touch;
+  will-change: scroll-position;
+  contain: size style layout;
+  overflow-x:hidden;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+}

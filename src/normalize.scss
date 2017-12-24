@@ -1,0 +1,40 @@
+/*custom normalize*/
+
+/*移除按钮默认所有样式*/
+button {
+  margin:0;
+  padding:0;
+  list-style-type:none;
+  -webkit-appearance: none;
+  background-color: transparent;
+  border:none
+}
+/*移除输入框默认所有样式*/
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+textarea {
+  background-color: transparent;
+  -webkit-appearance: none;
+}
+
+/*移除聚焦默认所有样式*/
+button:focus,
+input:focus,
+textarea:focus {
+  outline: none;
+  border: none;
+}
+/*移除微软删除小叉好*/
+input::-ms-clear {
+  display: none;
+}
+/*移除移动设备下点击高亮*/
+a,img,button,input,textarea{
+  -webkit-tap-highlight-color:transparent
+;}
+/*默认盒模型为border-box*/
+* {
+  box-sizing: border-box;;
+}
+
