@@ -1,0 +1,28 @@
+{
+  "name": "essentialscss",
+  "version": "1.0.0",
+  "description": "> essential-SCSS",
+  "main": "flexiable.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nocoolyoyo/essentialSCSS.git"
+  },
+  "keywords": [
+    "SCSS",
+    "SASS",
+    "webpack",
+    "node"
+  ],
+  "author": "nocoolyoyo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nocoolyoyo/essentialSCSS/issues"
+  },
+  "homepage": "https://github.com/nocoolyoyo/essentialSCSS#readme",
+  "dependencies": {
+    "normalize.css": "^7.0.0"
+  }
+}
