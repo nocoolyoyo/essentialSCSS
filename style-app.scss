@@ -1,0 +1,20 @@
+//引入normalize.css库
+@import "~normalize.css";
+
+@import "import";
+//引入自己的normalize标准
+@import "src/normalize";
+
+//移动端样式预设
+
+html {
+  /*移动端点击移除300ms*/
+  touch-action: manipulation;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
