@@ -1,8 +1,8 @@
 {
   "name": "scsseasy",
-  "version": "1.0.1",
-  "description": "scsseasy,my scss treasure",
-  "main": "flexiable.js",
+  "version": "1.0.2",
+  "description": "scsseasy,organize your scss",
+  "main": "flexible.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
