@@ -80,3 +80,6 @@
   }
   @return $newValue;
 }
+@function vws($value) {
+  @return ($value / $base-screen) * $width-page;
+}
