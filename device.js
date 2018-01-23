@@ -15,6 +15,7 @@
             return 'ios'
         if( /android/gi.test(ua))
             return 'android'
+        return 'windows'
     }
 
     docEl.setAttribute('data-client', _getClientType());
