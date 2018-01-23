@@ -19,5 +19,11 @@
     }
 
     docEl.setAttribute('data-client', _getClientType());
-    docEl.setAttribute('data-os', _getCilentOS());
+    docEl.setAttribute('data-OS', _getCilentOS());
+
+    //将信息挂载在window下
+    win.HtmlData = {
+        client:     _getClientType(),
+        OS:     _getCilentOS()
+    };
 })(window);

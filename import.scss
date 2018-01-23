@@ -1,5 +1,5 @@
 /*
-单独引入用
+通用变量方法导出
 */
 //全局变量
 @import "src/variables";
@@ -7,6 +7,5 @@
 @import "src/functions";
 //基类，复用片段
 @import "src/mixins";
-//移动端预设
-@import "src/app";
+
 
