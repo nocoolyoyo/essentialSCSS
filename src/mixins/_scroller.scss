@@ -1,6 +1,7 @@
 /*---滚动容器---*/
 @mixin scroller(){
   -webkit-overflow-scrolling: touch;
+  overflow-scrolling: touch;
   will-change: scroll-position;
   contain: size style layout;
   overflow-x:hidden;
